@@ -1,11 +1,15 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
+  $http.get('http://flashbulb.in/wp-json/wp/v2/categories').success(function(data){
+    $scope.categories = data;
+  });
 
 })
 
-.controller('homeCtrl', function($ionicPlatform,$http, $scope, $cordovaDevice) {
+.controller('homeCtrl', function($ionicPlatform,$http, $scope) {
     	$scope.newsAPI = 'http://flashbulb.in/wp-json/posts/';
+    //	$scope.newsAPI = 'http://flashbulb.in/wp-json/wp/v2/posts/';
       $http.get($scope.newsAPI).success(function(data){
         $scope.postData = data;
       });

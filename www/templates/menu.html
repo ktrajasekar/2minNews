@@ -16,16 +16,14 @@
           <img src="http://placeimg.com/90/90/people" alt="">
             <p class="text-center profileTxt">1minRead News</p>
       </div>
-      <ion-list class="iconsMenu ">
-
-<!--<ion-item menu-close ng-click="login()">Login</ion-item>-->
-       <ion-item menu-close href="#/app/">
-       <i class="icon ion-home"></i>Home</ion-item>
-        <ion-item menu-close href="#/app/about">
-        <i class="icon ion-person"></i>About</ion-item>
-        <ion-item menu-close href="#/app/contact"><i class="icon ion-chatboxes"></i>Contact</ion-item>
-         <ion-item menu-close href="#/app/devicestatus">
-       <i class="icon ion-android-settings"></i>Device Status</ion-item>
+      <ion-list class="iconsMenu">
+        <ion-item menu-close href="#/app/"> <i class="icon ion-home"></i>Home</ion-item>
+        <ion-item menu-close href="#/app/contact" ng-repeat="item in categories">{{item.name}}</ion-item>
+        <ion-item menu-close href="#/app/devicestatus">
+      <i class="icon ion-android-settings"></i>Device Status</ion-item>
+      <ion-item menu-close href="#/app/about">
+      <i class="icon ion-person"></i>About</ion-item>
+            <ion-item menu-close href="#/app/contact"><i class="icon ion-chatboxes"></i>Contact</ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>
