@@ -3,8 +3,8 @@
       <div class="list card" ng-repeat="x in postData">
         <div class="item item-body latestPost">
           <!-- <img class="full-image" src="delorean.jpg"> -->
-              <h3 ng-bind-html="x.title"></h3>
-            <p ng-bind-html="x.excerpt"></p>
+              <h3 ng-bind-html="x.title.rendered"></h3>
+            <p ng-bind-html="x.excerpt.rendered"></p>
         </div>
         <div class="item item-avatar">
       <img src="{{x.author.avatar}}" alt="">
