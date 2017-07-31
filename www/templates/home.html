@@ -1,0 +1,16 @@
+<ion-view view-title="Latest Post" class="">
+    <ion-content>
+      <div class="list card" ng-repeat="x in postData">
+        <div class="item item-body latestPost">
+          <!-- <img class="full-image" src="delorean.jpg"> -->
+              <h3 ng-bind-html="x.title"></h3>
+            <p ng-bind-html="x.excerpt"></p>
+        </div>
+        <div class="item item-avatar">
+      <img src="{{x.author.avatar}}" alt="">
+          <h2>{{x.author.name}}</h2>
+          <p>{{x.date}}</p>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>
