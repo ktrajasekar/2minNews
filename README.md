@@ -1,4 +1,4 @@
-# Ionic Wordpress
+# 2MinNews
 
 ###Install Ionic 
 
