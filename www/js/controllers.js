@@ -7,7 +7,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('homeCtrl', function($ionicPlatform,$http, $scope) {
+.controller('homeCtrl', function($ionicPlatform,$http, $scope, $stateParams) {
+            console.log($stateParams.name);
     	$scope.newsAPI = 'http://flashbulb.in/wp-json/wp/v2/posts';
     //	$scope.newsAPI = 'http://flashbulb.in/wp-json/wp/v2/posts/';
       $http.get($scope.newsAPI).success(function(data){
