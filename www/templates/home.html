@@ -1,5 +1,12 @@
 <ion-view view-title="Latest Post" class="">
     <ion-content>
+      {{orders}}
+<ul>
+<li ng-repeat = "cat in orders">
+  {{cat.id}}
+</li>
+
+</ul>
       <div class="list card" ng-repeat="x in postData">
         <div class="item item-body latestPost">
           <!-- <img class="full-image" src="delorean.jpg"> -->
@@ -12,5 +19,6 @@
           <p>{{x.date}}</p>
         </div>
       </div>
+
     </ion-content>
 </ion-view>
