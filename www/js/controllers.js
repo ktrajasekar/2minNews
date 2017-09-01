@@ -19,6 +19,7 @@ angular.module('starter.controllers', [])
         });
 })
 .controller('homeCtrl', function($ionicPlatform,$http, $state, $scope, $stateParams, servicesreturn) {
+  $scope.loading = true;
   console.log($stateParams.name)
       servicesreturn.categoriesData()
         .then(function (data) {
@@ -31,6 +32,8 @@ angular.module('starter.controllers', [])
     //	$scope.newsAPI = 'http://flashbulb.in/wp-json/wp/v2/posts/';
       $http.get($scope.newsAPI).success(function(data){
         $scope.postData = data;
+      }).finally(function(){
+          $scope.loading = false;
       });
       $scope.postDetails = function(postid){
         console.log(postid);
