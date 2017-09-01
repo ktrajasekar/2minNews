@@ -71,3 +71,9 @@ h3 {
   font-weight: 600;
   margin: 0;
 }
+.postDetails h2{
+  margin-bottom: 15px;
+}
+.postsummary a{
+  display: none;
+}
