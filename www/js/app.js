@@ -58,6 +58,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         }
       }
     })
+    .state('app.postdetails', {
+      url: '/postdetails/:postID',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/postpage.html',
+            controller: 'postPage'
+        }
+      }
+    })
     .state('app.devicestatus', {
       url: '/devicestatus',
       views: {

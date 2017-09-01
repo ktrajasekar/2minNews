@@ -18,7 +18,7 @@
       </div>
       <ion-list class="iconsMenu">
         <ion-item menu-close ng-href="#/app/"> <i class="icon ion-home"></i>Home</ion-item>
-        <ion-item menu-close ng-href="#/app/home/{{item.name}}" ng-repeat="item in categories" target="_self">{{item.name}}</ion-item>
+        <ion-item menu-close ng-href="#/app/home/{{item.name}}" ng-repeat="item in categories" target="_self">{{item.name}}- {{item.id}}</ion-item>
         <ion-item menu-close ng-href="#/app/devicestatus">
       <i class="icon ion-android-settings"></i>Device Status</ion-item>
       <ion-item menu-close ng-href="#/app/about">

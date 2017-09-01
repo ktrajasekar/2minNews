@@ -8,8 +8,18 @@ angular.module('starter.controllers', [])
         $scope.status = 'Error Retrieving Data! ' + error.message;
     });
 })
-
-.controller('homeCtrl', function($ionicPlatform,$http, $scope, $stateParams, servicesreturn) {
+.controller('postPage', function($scope, $ionicModal, $timeout, $http, $stateParams, $state, servicesreturn) {
+        console.log($state.params.postID);
+        $scope.postIDvalue= $state.params.postID
+        $scope.newsAPI = 'http://flashbulb.in/wp-json/wp/v2/posts';
+      //	$scope.newsAPI = 'http://flashbulb.in/wp-json/wp/v2/posts/';
+        $http.get($scope.newsAPI + '/'+$scope.postIDvalue ).success(function(data){
+          $scope.postData = data;
+          console.log($scope.postData);
+        });
+})
+.controller('homeCtrl', function($ionicPlatform,$http, $state, $scope, $stateParams, servicesreturn) {
+  console.log($stateParams.name)
       servicesreturn.categoriesData()
         .then(function (data) {
             $scope.orders = data;
@@ -22,6 +32,10 @@ angular.module('starter.controllers', [])
       $http.get($scope.newsAPI).success(function(data){
         $scope.postData = data;
       });
+      $scope.postDetails = function(postid){
+        console.log(postid);
+            $state.go('app.postdetails',{postID: postid});
+      }
 })
 
 .controller('deviceStatusCtrl', function($ionicPlatform, $scope, $cordovaDevice, $cordovaNetwork) {
